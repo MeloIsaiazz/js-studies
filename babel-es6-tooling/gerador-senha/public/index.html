@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link
+      rel="shortcut icon"
+      href="https://thispersondoesnotexist.com"
+      type="image/x-icon"
+    />
+
+    <title>Gerador de Senhas</title>
+  </head>
+
+  <body>
+    <section class="container">
+      <h1>Gerador de Senhas</h1>
+      <div class="senha-gerada">Senha aqui</div>
+      <form>
+        <label for="tamanho"
+          >Tamanho da Senha
+          <input
+            type="range"
+            name="tamanho"
+            id="tamanho"
+            min="5"
+            max="50"
+            step="1"
+          />
+        </label>
+        <div class="checkbox-group">
+          <label for="maiusculas"
+            >Maiúsculas
+            <input type="checkbox" name="maiusculas" id="maiusculas" checked />
+          </label>
+
+          <label for="minusculas"
+            >Minúsculas
+            <input type="checkbox" name="minusculas" id="minusculas" />
+          </label>
+
+          <label for="numeros"
+            >Numeros
+            <input type="checkbox" name="numeros" id="numeros" checked />
+          </label>
+
+          <label for="simbolos"
+            >Simbolos
+            <input type="checkbox" name="simbolos" id="simbolos" />
+          </label>
+        </div>
+
+        <button type="button">Gerar</button>
+      </form>
+    </section>
+
+    <script src="./assets/js/bundle.js"></script>
+  </body>
+</html>
