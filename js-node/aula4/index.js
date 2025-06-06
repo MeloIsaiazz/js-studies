@@ -21,4 +21,4 @@ async function walk(files, rootDir) {
     }
 }
 
-ReadDir('../../');
+ReadDir('../');
