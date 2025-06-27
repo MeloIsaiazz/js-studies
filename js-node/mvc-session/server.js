@@ -13,13 +13,16 @@ mongoose
   })
   .catch((e) => console.log(e));
 
+// Configurações de Session
 const session = require("express-session");
 const MongoStore = require("mongo-connect");
+
+// Configurações de Flash Message
 const Flash = require("flash-connect");
+
 
 const routes = require("./routes");
 const path = require("path");
-const { connect } = require("http2");
 
 // Configurações do servidor
 app.use(express.urlencoded({ extended: true })); // Body de requisição
