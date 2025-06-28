@@ -1,5 +1,7 @@
-function MeuMiddleware(params) {
-    console.log("Passou pelo middleware global")
-}
+exports.middlewareGlobal = (req, res, next) => {
+  next();
+};
 
-module.exports = MeuMiddleware
+exports.outroMiddleware = (req, res, next) => {
+  next();
+};
