@@ -49,17 +49,16 @@ app.use(express.urlencoded({ extended: true })); // Body de requisição
 app.use(express.static(path.resolve(__dirname, "public"))); // Arquivos estáticos
 app.set("views", path.resolve(__dirname, "src", "views")); // Views
 app.set("view engine", "ejs"); // Engine de Views
-// app.use(csrfMiddleware);
 app.use(sessionOptions);
 app.use(flash());
 app.use(helmet());
 app.use(csrf());
 
 // Nossos Middlewares
-app.use(routes); // Arquivo de Rotas
 app.use(middlewareGlobal);
-app.use(csrfMiddleware);
 app.use(checkCsrfError);
+app.use(csrfMiddleware);
+app.use(routes); // Arquivo de Rotas
 
 // Disponibilizar porta 3000 para requisições
 app.on("pronto", () => {
