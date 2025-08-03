@@ -1,0 +1,86 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+
+    <!-- Início do bloco de formulário -->
+    <div class="col-lg-8 my-3">
+
+      <h1 class="text-center">Login</h1>
+      <p class="text-center lead">Entre na sua conta ou registre-se abaixo</p>
+      
+      <!-- Mensagem-->
+      <div class="row d-none">
+        <div class="col my-3">
+          <div class="alert alert-danger">Uma mensagem personalizada</div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+
+        <!-- Login -->
+        <div class="col-lg">
+          <h4>Login</h4>
+          
+          <form method="POST" action="/login/login">
+            <div class="mb-3">
+              <label for="email-login" class="form-label">Email</label>
+              <input type="email-login" name="email" class="form-control" id="email" placeholder="Digite seu email" required>
+            </div>
+            
+            <div class="mb-3">
+              <label for="pwd-login" class="form-label">Senha</label>
+              <input type="password" name="pwd" class="form-control" id="pwd-login" placeholder="Digite sua senha" required>
+            </div>
+
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="remember-cb">
+              <label class="form-check-label" for="remember-cb">Manter-me logado</label>
+            </div>
+
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+            <button type="submit" class="btn btn-primary">Entrar</button>
+          </form>
+
+        </div>
+
+        <!-- Cadastro -->
+        <div class="col-lg">
+          <h4>Crie sua conta</h4>
+
+          <form method="POST" action="/login/register">
+            <div class="mb-3">
+              <label for="email-cadastro" class="form-label">Email</label>
+              <input type="email-cadastro" name="email" class="form-control" id="email-cadastro" placeholder="Digite seu email" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="pwd" class="form-label">Senha</label>
+              <input type="password" name="pwd" class="form-control" id="pwd" placeholder="Digite sua senha" required>
+            </div>
+
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="privacy-cb" required>
+              <label class="form-check-label" for="privacy-cb">Li e concordo com os Termos de uso</label>
+            </div>
+
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+            <button type="submit" class="btn btn-primary">Cadastrar-se</button>
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+
+<%- include('includes/footer') %>
